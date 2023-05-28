@@ -170,14 +170,16 @@ namespace Crawler_Proxy_Servers
 
         private static void SaveHtmlPages(HtmlDocument htmlDocument, string folderPath, int totalPages)
         {
+
             for (int i = 1; i <= totalPages; i++)
             {
                 var pageUrl = $"{BaseUrl}/page/{i}";
                 var html = htmlDocument.DocumentNode.OuterHtml;
                 var filePath = Path.Combine(folderPath, $"page_{i}.html");
                 File.WriteAllText(filePath, html);
-                Console.WriteLine("Arquivo HTML da página " + i + " salvo em: " + Path.GetFullPath(filePath));
             }
+
+                Console.WriteLine("Arquivos HTML salvo em: " + Path.GetFullPath(folderPath));
         }
     }
 
