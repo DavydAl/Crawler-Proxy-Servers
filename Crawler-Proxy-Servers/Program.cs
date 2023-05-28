@@ -1,10 +1,12 @@
-﻿namespace Crawler_Proxy_Servers
+﻿using MySql.Data.MySqlClient;
+
+namespace Crawler_Proxy_Servers
 {
     internal class Program
     {
         static async Task Main(string[] args)
         {
-            string connectionString = "server=127.0.0.1;port=3306;database=crawler_impacta;uid=Admin;password=Admin;";
+            string connectionString = "server=127.0.0.1;port=3306;database=crawler;uid=Admin;password=Admin;";
 
             using (var connection = new MySqlConnection(connectionString))
             {
